@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: argocd-sample
+  name: argocd-sample
+  namespace: argocd-testing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argocd-sample
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: argocd-sample
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        
+

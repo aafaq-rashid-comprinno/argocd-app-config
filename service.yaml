@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: argocd-sample
+  name: argocd-sample
+  namespace: argocd-testing
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: argocd-sample
+  type: ClusterIP
+
